@@ -1,3 +1,6 @@
+## Dependencies
+This web app needs binaries of https://github.com/arprasto/ScavengerHuntGame and dependencies added in pom.xml. You need to fork this dependency and need to run 'mvn clean package'.
+
 ## Before you begin
 Update the /ScavengerWebResultApp/src/main/webapp/properties/application.properties file.
 
