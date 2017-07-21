@@ -36,7 +36,7 @@ Use the following command to run the built application in Bluemix:
 
 ## Bluemix Deployment
 
-![![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/rameshpoomalai/ProcurementSystem (https://bluemix.net/deploy/button.png%29]%28https://bluemix.net/deploy?repository=https://github.com/arprasto/ScavengerWebResultApp) )
+![![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/arprasto/ScavengerWebResultApp (https://bluemix.net/deploy/button.png%29]%28https://bluemix.net/deploy?repository=https://github.com/arprasto/ScavengerWebResultApp) )
 
 Note: this deployment will be done using default values in dependent app properties file. If you have changed DB name in https://github.com/arprasto/ScavengerHuntGame than recomment you to check out this code and deploy from your localhost.
 
