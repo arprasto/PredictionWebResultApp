@@ -3,6 +3,8 @@ package wasdev.servlet;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -20,7 +22,7 @@ import com.ibm.watson.scavenger.visualrecognition.ImageAnalysis;
 @WebServlet("/RootServlet")
 public class SimpleServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-
+    Logger log = Logger.getLogger(SimpleServlet.class.getName());
     
 	@Override
 	public void init(ServletConfig config) throws ServletException {
@@ -29,6 +31,11 @@ public class SimpleServlet extends HttpServlet {
 			prop.load(getClass().getClassLoader().getResourceAsStream("properties/application.properties"));
 		} catch (IOException e) {
 			e.printStackTrace();
+			log.log(Level.SEVERE,"can not read properties file, continuing with default values");
+			prop.put("db_name", "scavengerimagesdb");
+			prop.put("web_page_refresh_interval","10000");
+			prop.put("db_svc_plan","null");
+			prop.put("vr_svc_plan","null");
 		}
 		String db_name = prop.getProperty("db_name","scavengerimagesdb").trim();
 		if(db_name.equals(""))

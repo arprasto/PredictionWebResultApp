@@ -1,3 +1,10 @@
+## Introduction
+This web app fetches stored results of Scavenger app(https://github.com/arprasto/ScavengerHuntGame) from Cloudant DB and displays on web page.
+
+## Architecture
+
+<img src="src/main/webapp/images/Snip20170721_20.png" allignment="center"/>
+
 ## Dependencies
 This web app needs binaries of https://github.com/arprasto/ScavengerHuntGame and dependencies added in pom.xml. You need to fork this dependency and need to run 'mvn clean package'.
 
@@ -26,6 +33,13 @@ Use the following command to run the built application in Bluemix:
     ```bash
     $ cf push <appname> -p target/ScavengerWebResultApp.war
     ```
+
+## Bluemix Deployment
+
+![![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/rameshpoomalai/ProcurementSystem (https://bluemix.net/deploy/button.png%29]%28https://bluemix.net/deploy?repository=https://github.com/arprasto/ScavengerWebResultApp) )
+
+Note: this deployment will be done using default values in dependent app properties file. If you have changed DB name in https://github.com/arprasto/ScavengerHuntGame than recomment you to check out this code and deploy from your localhost.
+
 ## Developing and Deploying using Eclipse
 
 IBM® Eclipse Tools for Bluemix® provides plug-ins that can be installed into an existing Eclipse environment to assist in integrating the developer's integrated development environment (IDE) with Bluemix.
