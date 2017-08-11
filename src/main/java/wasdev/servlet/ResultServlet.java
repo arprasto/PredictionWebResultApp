@@ -24,9 +24,9 @@ public class ResultServlet extends HttpServlet
 		StringBuffer htmlbody = new StringBuffer();
 		StringBuffer wholepage = new StringBuffer();		
 		wholepage.append("<html><title>Scavenger Image results</title>");
-		javascript.append("<script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>"
+		javascript.append(""
 				+ "<script type=\"text/javascript\">"
-				+ "$(document).ready(function(){setInterval(function(){cache_clear()},"+req.getServletContext().getAttribute("web_page_refresh_interval")+"); }); function cache_clear(){ window.location.reload(true);}"
+				+ "var time = new Date().getTime();function refresh() { if(new Date().getTime() - time >= "+req.getServletContext().getAttribute("web_page_refresh_interval")+") window.location.reload(true); else setTimeout(refresh, 10000); } setTimeout(refresh, 10000);"
 				+ "function loadJPG(){");
 		htmlbody.append("<body onload=\"javascript:loadJPG();\"><div id=\"images\"><table>");
 		List<JSonDocumentTemplateClass> lst = dbsvc.getAllIMGsBase64();
@@ -46,7 +46,7 @@ public class ResultServlet extends HttpServlet
 			htmlbody.append("</div></td></tr>");
 		}}
 		else{
-			htmlbody.append("<h1>no images upload yet in DB");
+			htmlbody.append("<h1>No images upload yet in DB");
 		}
 		javascript.append("}</script>");
 		htmlbody.append("</body>");
