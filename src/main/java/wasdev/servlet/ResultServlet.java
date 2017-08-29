@@ -33,15 +33,15 @@ public class ResultServlet extends HttpServlet
 		if(lst.size()>0){
 		for(JSonDocumentTemplateClass img_file:lst){
 			javascript.append(""
-					+ "var "+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf("."))+"_img64=\"data:image/jpg;base64,"+img_file.getImg_base64()+"\";"
-					+ "var "+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf("."))+"_jpg=new Image();"
-					+ img_file.getImg_id().substring(0,img_file.getImg_id().indexOf("."))+"_jpg.src = "+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf("."))+"_img64;"
-					+ img_file.getImg_id().substring(0,img_file.getImg_id().indexOf("."))+"_jpg.style.height = '150px';"
-					+ img_file.getImg_id().substring(0,img_file.getImg_id().indexOf("."))+"_jpg.style.width = '150px';"
-					+ "document.getElementById('"+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf("."))+"_img').appendChild("+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf("."))+"_jpg);");
-			htmlbody.append("<tr><div id=\""+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf("."))+"_div\">");
+					+ "var "+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf(".")).replaceAll("-","_")+"_img64=\"data:image/jpg;base64,"+img_file.getImg_base64()+"\";"
+					+ "var "+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf(".")).replaceAll("-","_")+"_jpg=new Image();"
+					+ img_file.getImg_id().substring(0,img_file.getImg_id().indexOf(".")).replaceAll("-","_")+"_jpg.src = "+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf(".")).replaceAll("-","_")+"_img64;"
+					+ img_file.getImg_id().substring(0,img_file.getImg_id().indexOf(".")).replaceAll("-","_")+"_jpg.style.height = '150px';"
+					+ img_file.getImg_id().substring(0,img_file.getImg_id().indexOf(".")).replaceAll("-","_")+"_jpg.style.width = '150px';"
+					+ "document.getElementById('"+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf(".")).replaceAll("-","_")+"_img').appendChild("+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf(".")).replaceAll("-","_")+"_jpg);");
+			htmlbody.append("<tr><div id=\""+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf(".")).replaceAll("-","_")+"_div\">");
 			String html_result = img_file.getImg_result_html().replaceAll("<html><body>","").replaceAll("</html></body>", "");
-			htmlbody.append("<td style='width: 30%;'><div id=\""+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf("."))+"_img\" height=\"110\" width=\"110\"\"/></td>");
+			htmlbody.append("<td style='width: 30%;'><div id=\""+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf(".")).replaceAll("-","_")+"_img\" height=\"160\" width=\"160\"\"/></td>");
 			htmlbody.append("<td>"+html_result+"</td>");
 			htmlbody.append("</div></td></tr>");
 		}}
