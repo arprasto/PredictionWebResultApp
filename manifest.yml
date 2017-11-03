@@ -8,6 +8,7 @@ applications:
   host: ScavengerWebResultApp
   disk_quota: 512M
   services:
+  - availability-monitoring-auto
   - scavengerApp-iotf-service
   - arpitVisual Recognition-ed
   - scavengerApp-cloudantNoSQLDB

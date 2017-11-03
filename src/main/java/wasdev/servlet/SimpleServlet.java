@@ -14,10 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ibm.watson.developer_cloud.visual_recognition.v3.VisualRecognition;
 import com.ibm.watson.scavenger.CloudantNoSQLDB.DBCommunicator;
 import com.ibm.watson.scavenger.util.PatchedCredentialUtils;
-import com.ibm.watson.scavenger.visualrecognition.ImageAnalysis;
 
 @WebServlet("/RootServlet")
 public class SimpleServlet extends HttpServlet {
