@@ -75,7 +75,8 @@ public class SimpleServlet extends HttpServlet {
         	db_svc_plan = null;
         
         String db_name = request.getServletContext().getAttribute("db_name").toString();
-        System.out.println(db_name+"::::::::::::"+PatchedCredentialUtils.getDBuname(db_svc_plan)+"::::::::::::::::"+PatchedCredentialUtils.getDBpass(db_svc_plan)+":::::::::::"+PatchedCredentialUtils.getDBurl(db_svc_plan));
+        String app_id = request.getParameter("app_id_txt").trim();
+        System.out.println(app_id+":::::::::::::::"+db_name+"::::::::::::"+PatchedCredentialUtils.getDBuname(db_svc_plan)+"::::::::::::::::"+PatchedCredentialUtils.getDBpass(db_svc_plan)+":::::::::::"+PatchedCredentialUtils.getDBurl(db_svc_plan));
         
    		try {
    			request.getServletContext().setAttribute("db_svc",
@@ -83,6 +84,7 @@ public class SimpleServlet extends HttpServlet {
    							PatchedCredentialUtils.getDBpass(db_svc_plan),
    							PatchedCredentialUtils.getDBurl(db_svc_plan),
    							db_name));
+   			request.getServletContext().setAttribute("app_id",app_id);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		} 		

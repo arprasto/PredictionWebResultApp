@@ -28,8 +28,20 @@ public class ResultServlet extends HttpServlet
 				+ "<script type=\"text/javascript\">"
 				+ "var time = new Date().getTime();function refresh() { if(new Date().getTime() - time >= "+req.getServletContext().getAttribute("web_page_refresh_interval")+") window.location.reload(true); else setTimeout(refresh, 10000); } setTimeout(refresh, 10000);"
 				+ "function loadJPG(){");
-		htmlbody.append("<body onload=\"javascript:loadJPG();\"><div id=\"images\"><table>");
-		List<JSonDocumentTemplateClass> lst = dbsvc.getAllIMGsBase64();
+		
+		List<JSonDocumentTemplateClass> scores_lst = dbsvc.getAllScores((String)req.getServletContext().getAttribute("app_id"));
+		int total_score=0;
+		String random_img_obj_str = null;
+		for(JSonDocumentTemplateClass lst : scores_lst){
+			total_score = total_score + lst.getScore();
+			random_img_obj_str = lst.getRandom_img_obj_str();
+		}
+		
+		htmlbody.append("<body onload=\"javascript:loadJPG();\">"
+				+ "<h1>Total score : "+total_score+"</h1><br/><h1>Allowable Objs : "+random_img_obj_str+"</h1><br/>"
+				+ "<div id=\"images\"><table>");
+
+		List<JSonDocumentTemplateClass> lst = dbsvc.getAllIMGsBase64((String)req.getServletContext().getAttribute("app_id"));
 		if(lst.size()>0){
 		for(JSonDocumentTemplateClass img_file:lst){
 			javascript.append(""

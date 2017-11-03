@@ -5,14 +5,24 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" href="style.css" />
 </head>
+<script type="text/javascript">
+function setClickText(){
+document.getElementById("app_id_txt").value=""
+}
+</script>
 <body>
 	<table>
 		<tr>
 			<td style='width: 30%;'>
 				<img class = "newappIcon" src='images/newapp-icon.png'>
 			</td>
-			<td>
-				<p class='description'></p> <span class="blue"><a href="/RootServlet">click here to see results</a></span>.
+			<td><form action="/RootServlet" id="app_id_form">
+				<p class='description'></p> 
+				<span class="blue">
+				<input type="text" alt="enter application id" id="app_id_txt" onfocus="javascript:setClickText();" value="enter your app-id here"/>
+				<input type="submit" value="click here to see results" alt="click here to see results">
+				</span>.
+				</form>
 			</td>
 		</tr>
 	</table>

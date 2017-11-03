@@ -1,10 +1,13 @@
+---
 applications:
 - path: target/ScavengerWebResultApp.war
   memory: 512M
   instances: 1
   domain: mybluemix.net
-  name: ScavengerResultBrowserApp
-  host: ScavengerResultBrowserApp
+  name: ScavengerWebResultApp
+  host: ScavengerWebResultApp
   disk_quota: 512M
   services:
-  - availability-monitoring-auto
+  - scavengerApp-iotf-service
+  - arpitVisual Recognition-ed
+  - scavengerApp-cloudantNoSQLDB
