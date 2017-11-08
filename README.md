@@ -9,7 +9,7 @@ This web app fetches stored results of Scavenger app(https://github.com/arprasto
 This web app needs binaries of https://github.com/arprasto/ScavengerHuntGame and dependencies added in pom.xml. You need to fork this dependency and need to run 'mvn clean package'.
 
 ## Before you begin
-Update the /ScavengerWebResultApp/src/main/webapp/properties/application.properties file.
+Update the /ScavengerWebResultApp/src/main/webapp/properties/application.properties and manifest.yml files accordingly to your service instances.
 
 ## Running the application using the command-line
 
