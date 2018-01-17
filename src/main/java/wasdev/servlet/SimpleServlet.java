@@ -30,15 +30,15 @@ public class SimpleServlet extends HttpServlet {
 		} catch (IOException e) {
 			e.printStackTrace();
 			log.log(Level.SEVERE,"can not read properties file, continuing with default values");
-			prop.put("db_name", "scavengerimagesdb");
+			prop.put("db_name", "predictionresultdb");
 			prop.put("web_page_refresh_interval","10000");
 			prop.put("db_svc_plan","null");
 			prop.put("vr_svc_plan","null");
 		}
-		String db_name = prop.getProperty("db_name","scavengerimagesdb").trim();
+		String db_name = prop.getProperty("db_name","predictionresultdb").trim();
 		if(db_name.equals(""))
 		{
-			db_name = "scavengerimagesdb";
+			db_name = "predictionresultdb";
 		}
 		
 		String web_page_refresh_interval = prop.getProperty("web_page_refresh_interval","10000").trim();

@@ -62,7 +62,7 @@
                     <artifactId>maven-war-plugin</artifactId>
                     <configuration>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
-                        <warName>ScavengerWebResultApp</warName>
+                        <warName>PredictionWebResultApp</warName>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -86,6 +86,6 @@
         </plugins>
     </build>
 
-    <groupId>com.ibm.scavenger.web.app</groupId>
-    <artifactId>ScavengerWebResultApp</artifactId>
+    <groupId>com.ibm.WatsonVRTrainingResult.web.app</groupId>
+    <artifactId>PredictionWebResultApp</artifactId>
 </project>

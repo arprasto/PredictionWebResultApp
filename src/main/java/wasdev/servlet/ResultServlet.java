@@ -23,7 +23,7 @@ public class ResultServlet extends HttpServlet
 		StringBuffer javascript = new StringBuffer();
 		StringBuffer htmlbody = new StringBuffer();
 		StringBuffer wholepage = new StringBuffer();		
-		wholepage.append("<html><title>Scavenger Image results</title>");
+		wholepage.append("<html><title>Prediction Image results</title>");
 		javascript.append(""
 				+ "<script type=\"text/javascript\">"
 				+ "var time = new Date().getTime();function refresh() { if(new Date().getTime() - time >= "+req.getServletContext().getAttribute("web_page_refresh_interval")+") window.location.reload(true); else setTimeout(refresh, 10000); } setTimeout(refresh, 10000);"

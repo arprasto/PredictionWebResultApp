@@ -1,11 +1,11 @@
 ---
 applications:
-- path: target/ScavengerWebResultApp.war
+- path: target/PredictionWebResultApp.war
   memory: 512M
   instances: 1
   domain: mybluemix.net
-  name: ScavengerWebResultApp
-  host: ScavengerWebResultApp
+  name: PredictionWebResultApp
+  host: PredictionWebResultApp
   disk_quota: 512M
   services:
   - availability-monitoring-auto

@@ -1,15 +1,15 @@
 ## Introduction
-This web app fetches stored results of Scavenger app(https://github.com/arprasto/ScavengerHuntGame) from Cloudant DB and displays on web page.
+This web app fetches stored results of Prediction app of (https://github.com/arprasto/WatsonVRTrainingApp) from Cloudant DB and displays on web page.
 
 ## Architecture
 
 <img src="src/main/webapp/images/Snip20170721_20.png" allignment="center"/>
 
 ## Dependencies
-This web app needs binaries of https://github.com/arprasto/ScavengerHuntGame and dependencies added in pom.xml. You need to fork this dependency and need to run 'mvn clean package'.
+This web app needs binaries of https://github.com/arprasto/WatsonVRTrainingApp and dependencies added in pom.xml. You need to fork this dependency and need to run 'mvn clean package'.
 
 ## Before you begin
-Update the /ScavengerWebResultApp/src/main/webapp/properties/application.properties and manifest.yml files accordingly to your service instances.
+Update the /PredictionWebResultApp/src/main/webapp/properties/application.properties and manifest.yml files accordingly to your service instances.
 
 ## Running the application using the command-line
 
@@ -17,7 +17,7 @@ This project can be built with [Apache Maven](http://maven.apache.org/). The pro
 
 Use the following steps to run the application locally:
 
-1. Execute full Maven build to create the `target/ScavengerWebResultApp.war` file:
+1. Execute full Maven build to create the `target/PredictionWebResultApp.war` file:
     ```bash
     $ mvn clean install
     ```
@@ -31,12 +31,12 @@ Use the following steps to run the application locally:
 
 Use the following command to run the built application in Bluemix:
     ```bash
-    $ cf push <appname> -p target/ScavengerWebResultApp.war
+    $ cf push <appname> -p target/PredictionWebResultApp.war
     ```
 
 ## Bluemix Deployment
 
-![![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/arprasto/ScavengerWebResultApp (https://bluemix.net/deploy/button.png%29]%28https://bluemix.net/deploy?repository=https://github.com/arprasto/ScavengerWebResultApp) )
+![![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/arprasto/PredictionWebResultApp (https://bluemix.net/deploy/button.png%29]%28https://bluemix.net/deploy?repository=https://github.com/arprasto/PredictionWebResultApp) )
 
 Note: this deployment will be done using default values in dependent app properties file. If you have changed DB name in https://github.com/arprasto/ScavengerHuntGame than recommend you to check out this code, change properties file and deploy from your localhost.
 
@@ -57,9 +57,9 @@ IBM® Eclipse Tools for Bluemix® provides plug-ins that can be installed into a
   - Continue the wizard with default options to Finish
 
 4. Run your application locally on Liberty:
-  - Right click on the `ScavengerWebResultApp` sample and select `Run As` -> `Run on Server` option
+  - Right click on the `PredictionWebResultApp` sample and select `Run As` -> `Run on Server` option
   - Find and select the localhost Liberty server and press `Finish`
-  - In a few seconds, your application should be running at http://localhost:9080/ScavengerWebResultApp/
+  - In a few seconds, your application should be running at http://localhost:9080/PredictionWebResultApp/
 
 5. Create a Bluemix server definition:
   - In the `Servers` view, right-click -> `New` -> `Server`
@@ -68,7 +68,7 @@ IBM® Eclipse Tools for Bluemix® provides plug-ins that can be installed into a
   - Select your `org` and `space` and click `Finish`
 
 6. Run your application on Bluemix:
-  - Right click on the `ScavengerWebResultApp` sample and select `Run As` -> `Run on Server` option
+  - Right click on the `PredictionWebResultApp` sample and select `Run As` -> `Run on Server` option
   - Find and select the `IBM Bluemix` and press `Finish`
   - A wizard will guide you with the deployment options. Be sure to choose a unique `Name` for your application
   - In a few minutes, your application should be running at the URL you chose.
