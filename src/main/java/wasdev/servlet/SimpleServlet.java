@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ibm.watson.scavenger.CloudantNoSQLDB.DBCommunicator;
-import com.ibm.watson.scavenger.util.PatchedCredentialUtils;
+import com.ibm.watson.WatsonVRTraining.CloudantNoSQLDB.DBCommunicator;
+import com.ibm.watson.WatsonVRTraining.util.PatchedCredentialUtils;
 
 @WebServlet("/RootServlet")
 public class SimpleServlet extends HttpServlet {
@@ -65,6 +65,8 @@ public class SimpleServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+   		System.out.println(request.getContextPath()+":"+request.getRequestURL()+":"+request.getLocalAddr()+":"+request.getRealPath("ResultServlet")+":"+request.getRemoteAddr()
+   		+":"+request.getRemoteAddr()+":"+request.getRequestURI()+":"+request.getServletPath());
         response.setContentType("text/html");
         String vr_svc_plan = null,db_svc_plan=null;
         if(request.getServletContext().getAttribute("vr_svc_plan").toString().equals("null"))

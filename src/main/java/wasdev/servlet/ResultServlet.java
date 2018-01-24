@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ibm.watson.scavenger.CloudantNoSQLDB.DBCommunicator;
-import com.ibm.watson.scavenger.CloudantNoSQLDB.JSonDocumentTemplateClass;
+import com.ibm.watson.WatsonVRTraining.CloudantNoSQLDB.DBCommunicator;
+import com.ibm.watson.WatsonVRTraining.CloudantNoSQLDB.JSonDocumentTemplateClass;
 
 @WebServlet("/ResultServlet")
 public class ResultServlet extends HttpServlet 
@@ -36,10 +36,9 @@ public class ResultServlet extends HttpServlet
 			total_score = total_score + lst.getScore();
 		}
 		
-		htmlbody.append("<body onload=\"javascript:loadJPG();\">");
+		htmlbody.append("<body onload=\"javascript:loadJPG();\"><div id=\"images\"><table>");
 
 		List<JSonDocumentTemplateClass> lst = dbsvc.getAllIMGsBase64((String)req.getServletContext().getAttribute("app_id"));
-		boolean score_allowableobjs_appearence_flag=true;
 		if(lst.size()>0){
 		for(JSonDocumentTemplateClass img_file:lst){
 			javascript.append(""
@@ -49,14 +48,7 @@ public class ResultServlet extends HttpServlet
 					+ img_file.getImg_id().substring(0,img_file.getImg_id().indexOf(".")).replaceAll("-","_")+"_jpg.style.height = '150px';"
 					+ img_file.getImg_id().substring(0,img_file.getImg_id().indexOf(".")).replaceAll("-","_")+"_jpg.style.width = '150px';"
 					+ "document.getElementById('"+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf(".")).replaceAll("-","_")+"_img').appendChild("+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf(".")).replaceAll("-","_")+"_jpg);");
-			
-			if(score_allowableobjs_appearence_flag){
-				random_img_obj_str = img_file.getRandom_img_obj_str();
-				htmlbody.append("<h1>Total score : "+total_score+"</h1><br/><h1>Allowable Objs : "+random_img_obj_str+"</h1><br/>"
-						+ "<div id=\"images\"><table>");
-				score_allowableobjs_appearence_flag=false;
-			}
-			
+						
 			htmlbody.append("<tr><div id=\""+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf(".")).replaceAll("-","_")+"_div\">");
 			String html_result = img_file.getImg_result_html().replaceAll("<html><body>","").replaceAll("</html></body>", "");
 			htmlbody.append("<td style='width: 30%;'><div id=\""+img_file.getImg_id().substring(0,img_file.getImg_id().indexOf(".")).replaceAll("-","_")+"_img\" height=\"160\" width=\"160\"\"/></td>");

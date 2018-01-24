@@ -42,7 +42,7 @@
         </dependency>
         <dependency>
             <groupId>com.ibm.watson</groupId>
-            <artifactId>scavengerHunt</artifactId>
+  			<artifactId>WatsonVRTrainingApp</artifactId>
             <version>0.0.1</version>
             <scope>compile</scope>
         </dependency>
@@ -62,7 +62,7 @@
                     <artifactId>maven-war-plugin</artifactId>
                     <configuration>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
-                        <warName>PredictionWebResultApp</warName>
+                        <warName>Result-WebApp</warName>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -87,5 +87,5 @@
     </build>
 
     <groupId>com.ibm.WatsonVRTrainingResult.web.app</groupId>
-    <artifactId>PredictionWebResultApp</artifactId>
+    <artifactId>Result-WebApp</artifactId>
 </project>

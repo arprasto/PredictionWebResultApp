@@ -1,6 +1,10 @@
 ## Introduction
 This web app fetches stored results of Prediction app of (https://github.com/arprasto/WatsonVRTrainingApp) from Cloudant DB and displays on web page.
 
+<video width="320" height="240" controls>
+  <source src="src/main/webapp/images/zoom_0.mp4" type="video/mp4">
+</video> 
+
 ## Architecture
 
 <img src="src/main/webapp/images/Snip20170721_20.png" allignment="center"/>

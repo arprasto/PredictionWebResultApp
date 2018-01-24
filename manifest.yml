@@ -1,14 +1,12 @@
 ---
 applications:
-- path: target/PredictionWebResultApp.war
+- path: target/Result-WebApp.war
   memory: 512M
   instances: 1
   domain: mybluemix.net
-  name: PredictionWebResultApp
-  host: PredictionWebResultApp
+  name: Result-WebApp
+  host: Result-WebApp
   disk_quota: 512M
   services:
   - availability-monitoring-auto
-  - scavengerApp-iotf-service
-  - arpitVisual Recognition-ed
-  - scavengerApp-cloudantNoSQLDB
+  - arpitCameraScavenger-cloudantNoSQLDB

@@ -4,6 +4,9 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/.apt_generated"/>
+        <dependent-module archiveName="WatsonVRTrainingApp-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/WatsonVRTrainingApp/WatsonVRTrainingApp">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="java-output-path" value="/PredictionWebResultApp/target/classes"/>
         <property name="context-root" value="PredictionWebResultApp"/>
     </wb-module>
