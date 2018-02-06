@@ -19,7 +19,7 @@ This project can be built with [Apache Maven](http://maven.apache.org/). The pro
 
 Use the following steps to run the application locally:
 
-1. Execute full Maven build to create the `target/PredictionWebResultApp.war` file:
+1. Execute full Maven build to create the `target/Result-WebApp.war` file:
     ```bash
     $ mvn clean install
     ```
