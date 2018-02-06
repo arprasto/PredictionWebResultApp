@@ -1,7 +1,7 @@
 ## Introduction
 This web app fetches stored results of Prediction app of (https://github.com/arprasto/WatsonVRTrainingApp) from Cloudant DB and displays on web page.
 
-For quick intro see <a href="src/main/webapp/images/zoom_0.mp4">this vedio</a>
+For quick intro see <a href="src/main/webapp/images/zoom_0.mp4">this video</a>
 
 ## Architecture
 
@@ -33,7 +33,7 @@ Use the following steps to run the application locally:
 
 Use the following command to run the built application in Bluemix:
     ```bash
-    $ cf push <appname> -p target/PredictionWebResultApp.war
+    $ cf push <appname> -p target/Result-WebApp.war
     ```
 
 ## Bluemix Deployment
